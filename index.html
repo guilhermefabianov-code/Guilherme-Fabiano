@@ -1,13 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <title>Painel de Materiais</title>
+  <style>
+    body { font-family: Arial; background:#0d1b2a; color:#fff; padding:20px; }
+    .box { background:#1b263b; padding:16px; border-radius:8px; }
+  </style>
 </head>
 <body>
   <h1>Painel de Materiais</h1>
-  <p>Se você está vendo isso, o GitHub Pages está funcionando ✅</p>
+  <div class="box" id="app">Carregando...</div>
+
+  <script>
+    if (window.__SNAPSHOT__) {
+      document.getElementById('app').innerHTML =
+        '<pre>' + JSON.stringify(window.__SNAPSHOT__, null, 2) + '</pre>';
+    } else {
+      document.getElementById('app').innerText =
+        'Sem snapshot (aguardando fluxo).';
+    }
+  </script>
 </body>
 </html>
-``
